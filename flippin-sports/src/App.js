@@ -10,6 +10,7 @@ class App extends Component {
           <h1>Hello</h1>
           <h2>there</h2>
           <Navigation />
+          <h1>Nedim</h1>
         </header>
       </div>
     );
