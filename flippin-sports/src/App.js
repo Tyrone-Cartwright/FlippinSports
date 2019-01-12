@@ -8,6 +8,7 @@ class App extends Component {
       <div className="App">
         <header className="App-header">
           <Navigation />
+          <h1>Nedim</h1>
         </header>
       </div>
     );
