@@ -10,6 +10,7 @@ class nbaTeams extends React.Component {
 
     componentDidMount() {
         this.props.fetchNBATeamInfo(0);
+        
     }
 
 
