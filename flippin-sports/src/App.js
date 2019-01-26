@@ -8,16 +8,8 @@ import NBATeamsList from "./components/NBAteams/nbaTeamList";
 class App extends Component {
     constructor(props) {
         super(props);
-        this.state = {
-            nbaTeamSelected: null,
-        };
+        this.state = {};
     }
-
-    selectTeam = teamIndex => {
-        this.setState({
-            nbaTeamSelected: teamIndex,
-        });
-    };
 
     render() {
         return (
@@ -29,12 +21,7 @@ class App extends Component {
                 <main>
                     <Route
                         path="/nba"
-                        render={props => (
-                            <NBATeamsList
-                                {...props}
-                                selectTeam={this.selectTeam}
-                            />
-                        )}
+                        render={props => <NBATeamsList {...props} />}
                     />
                 </main>
             </div>
