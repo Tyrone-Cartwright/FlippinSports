@@ -25,6 +25,11 @@ const Navigation = () => {
           MLB
         </NavLink>
       </li>
+      <li>
+        <NavLink to="/nhl" activeClassName="activeLink">
+          NHL
+        </NavLink>
+      </li>
     </ul>
   );
 };
