@@ -2,21 +2,21 @@ import {
     FETCH_NBA_TEAM_INFO_START,
     FETCH_NBA_TEAM_INFO_SUCCESS,
     FETCH_NBA_TEAM_INFO_FAILURE,
-} from '../../actions';
+} from "../../actions";
 
 const initialState = {
-    teamInfoHeaders0: [],
-    teamInfoData0: [],
-    teamInfoHeaders1: [],
-    teamInfoData1: [],
-    teamInfoHeaders2: [],
-    teamInfoData2: [],
+    teamInfoCommonHeaders: [],
+    teamInfoCommonData: [],
+    teamInfoSeasonRanksHeaders: [],
+    teamInfoSeasonRanksData: [],
+    teamInfoAvailableSeasonsHeaders: [],
+    teamInfoAvailableSeasonsData: [],
     fetchigTeamInfo: false,
     error: null,
-}
+};
 
 export const nbaReducer = (state = initialState, action) => {
-    switch(action.type) {
+    switch (action.type) {
         case FETCH_NBA_TEAM_INFO_START:
             return {
                 ...state,
@@ -27,8 +27,10 @@ export const nbaReducer = (state = initialState, action) => {
                 ...state,
                 error: null,
                 fetchigTeamInfo: false,
-                teamInfoHeaders0: action.payload[0].headers,
-                teamInfoData0: action.payload[0].rowSet[0],
+                teamInfoCommonHeaders: action.payload[0].headers,
+                teamInfoCommonData: action.payload[0].rowSet[0],
+                teamInfoSeasonRanksHeaders: action.payload[1].headers,
+                teamInfoSeasonRanksData: action.payload[1].rowSet[0],
             };
         case FETCH_NBA_TEAM_INFO_FAILURE:
             return {
@@ -39,4 +41,4 @@ export const nbaReducer = (state = initialState, action) => {
         default:
             return state;
     }
-}
+};
